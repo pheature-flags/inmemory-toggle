@@ -40,7 +40,7 @@ final class InMemoryFeatureRepositoryTest extends TestCase
         $repository = new InMemoryFeatureRepository();
         $repository->save($feature);
         self::assertSame($feature, $repository->get($featureId));
-        $repository->remove($featureId);
+        $repository->remove($feature);
         $repository->get($featureId);
     }
 }
