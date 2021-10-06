@@ -18,9 +18,9 @@ final class InMemoryFeatureRepository implements FeatureRepository
         $this->features[$feature->id()] = $feature;
     }
 
-    public function remove(FeatureId $featureId): void
+    public function remove(Feature $feature): void
     {
-        unset($this->features[$featureId->value()]);
+        unset($this->features[$feature->id()]);
     }
 
     public function get(FeatureId $featureId): Feature
