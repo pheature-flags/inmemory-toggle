@@ -76,7 +76,9 @@ final class InMemoryFeatureFinderTest extends TestCase
         $featureFactory = new InMemoryFeatureFactory($this->chainToggleStrategyFactory);
 
         $finder = new InMemoryFeatureFinder($this->config, $featureFactory);
-        self::assertCount(1, $finder->all());
+        $features =$finder->all();
+        self::assertCount(1, $features);
+        self::assertSame(0, array_key_first($features));
     }
 
     public function testItShouldGetAFeatureByIdFromInMemoryFeatureFinder(): void
