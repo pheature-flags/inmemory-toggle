@@ -1,12 +1,17 @@
 # Changelog
 
-## [Unreleased](https://github.com/pheature-flags/inmemory-toggle/tree/HEAD)
+## [0.2.1](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.1)
 
-[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.0...HEAD)
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.0...0.2.1)
 
 **Implemented enhancements:**
 
 - Update `InMemoryFeatureRepository::remove` contract with a `Feature` instead of `FeatureId` [\#4](https://github.com/pheature-flags/inmemory-toggle/issues/4)
+- \[\#6\] return numeric keyed array from feature finder [\#7](https://github.com/pheature-flags/inmemory-toggle/pull/7) (@kpicaza)
+
+**Fixed bugs:**
+
+- Return array with numerical keys at InmemoryFeatureFinder::all method [\#6](https://github.com/pheature-flags/inmemory-toggle/issues/6)
 
 ## [0.2.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.0) (2021-10-08)
 
