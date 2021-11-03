@@ -8,7 +8,7 @@ use Webmozart\Assert\Assert;
 
 final class InMemoryConfig
 {
-    /** @var array<string, mixed> */
+    /** @var array<string, array<string, string|bool|array<string, string|mixed>>> */
     private array $config = [];
 
     /**
@@ -17,17 +17,15 @@ final class InMemoryConfig
     public function __construct(array $config = [])
     {
         $this->assertConfig($config);
-        /** @var array<string, mixed> $feature */
+        /** @var array<string, string> $feature */
         foreach ($config as $feature) {
-            $this->config[(string)$feature['id']] = $feature;
+            $this->config[$feature['id']] = $feature;
         }
     }
 
     /**
      * @param string $featureId
-     * @return array<string, string|bool|array<string, mixed>>
-     * @psalm-suppress MixedReturnStatement
-     * @psalm-suppress MixedInferredReturnType
+     * @return array<string, string|bool|array<string, string|mixed>>
      */
     public function get(string $featureId): array
     {
@@ -51,14 +49,14 @@ final class InMemoryConfig
             Assert::keyExists($toggleConfig, 'enabled');
             Assert::boolean($toggleConfig['enabled']);
             Assert::nullOrIsArray($toggleConfig['strategies']);
-            /** @var array<string, mixed> $strategy */
+            /** @var array<string, string|null|array<string, mixed>> $strategy */
             foreach ($toggleConfig['strategies'] ?? [] as $strategy) {
                 Assert::keyExists($strategy, 'strategy_id');
                 Assert::string($strategy['strategy_id']);
                 Assert::keyExists($strategy, 'strategy_type');
                 Assert::string($strategy['strategy_type']);
                 Assert::nullOrIsArray($strategy['segments']);
-                /** @var array<string, mixed> $segment */
+                /** @var array<string, string|mixed> $segment */
                 foreach ($strategy['segments'] ?? [] as $segment) {
                     Assert::keyExists($segment, 'segment_id');
                     Assert::string($segment['segment_id']);
@@ -70,7 +68,7 @@ final class InMemoryConfig
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, string|bool|array<string, string|mixed>>
      */
     public function all(): array
     {
