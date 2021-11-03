@@ -30,14 +30,20 @@ final class InMemoryFeatureFinder implements FeatureFinder
         return $this->featureFactory->create($this->config->get($featureId));
     }
 
+    /**
+     * @return Feature[]
+     */
     public function all(): array
     {
-        return array_values(
-            array_map(
-                /** @param array<string, string|bool|array<string, mixed>> $feature */
-                fn(array $feature): Feature => $this->featureFactory->create($feature),
-                $this->config->all()
-            )
-        );
+        /** @var callable $configCallback */
+        $configCallback = function (array $feature): Feature {
+            /** @var array<string, string|bool|array<string, mixed>> $feature */
+            return $this->featureFactory->create($feature);
+        };
+
+        /** @var Feature[] $features */
+        $features = array_values(array_map($configCallback, $this->config->all()));
+
+        return $features;
     }
 }
