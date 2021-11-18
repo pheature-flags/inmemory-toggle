@@ -1,6 +1,27 @@
 # Changelog
 
-## [0.2.1](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.1)
+## [0.2.2](https://github.com/pheature-flags/inmemory-toggle/tree/HEAD) (2021-11-18)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.1...0.2.2)
+
+**Implemented enhancements:**
+
+- \[inmemory-toggle\] Update PhpStan to version 1 and level 9 [\#10](https://github.com/pheature-flags/inmemory-toggle/issues/10)
+- \[\#10\] Update PhpStan to version 1 and level 9 [\#11](https://github.com/pheature-flags/inmemory-toggle/pull/11) (@kpicaza)
+
+**Fixed bugs:**
+
+- Return array with numerical keys at InmemoryFeatureFinder::all method [\#6](https://github.com/pheature-flags/inmemory-toggle/issues/6)
+
+**Closed issues:**
+
+- \[inmemory-toggle\] update CI matrix PHP versions [\#12](https://github.com/pheature-flags/inmemory-toggle/issues/12)
+
+**Merged pull requests:**
+
+- \[\#12\] Run CI both PHP 7.4 and 8.0 [\#13](https://github.com/pheature-flags/inmemory-toggle/pull/13) (@kpicaza)
+
+## [0.2.1](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.1) (2021-10-15)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.0...0.2.1)
 
