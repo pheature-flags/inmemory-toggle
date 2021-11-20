@@ -6,27 +6,25 @@ namespace Pheature\InMemory\Toggle;
 
 use Webmozart\Assert\Assert;
 
+/**
+ * @psalm-import-type WriteStrategy from \Pheature\Core\Toggle\Write\Strategy
+ * @psalm-type InMemoryFeature array{id: string, enabled: bool, strategies?: WriteStrategy[]}
+ */
 final class InMemoryConfig
 {
-    /** @var array<string, array<string, string|bool|array<string, string|mixed>>> */
+    /** @var array<string, InMemoryFeature> */
     private array $config = [];
 
-    /**
-     * @param array<string, mixed> $config
-     */
+    /** @param InMemoryFeature[] $config */
     public function __construct(array $config = [])
     {
         $this->assertConfig($config);
-        /** @var array<string, string> $feature */
         foreach ($config as $feature) {
             $this->config[$feature['id']] = $feature;
         }
     }
 
-    /**
-     * @param string $featureId
-     * @return array<string, string|bool|array<string, string|mixed>>
-     */
+    /** @return InMemoryFeature */
     public function get(string $featureId): array
     {
         return $this->config[$featureId];
@@ -38,7 +36,9 @@ final class InMemoryConfig
     }
 
     /**
-     * @param array<string, mixed> $config
+     * @psalm-suppress RedundantConditionGivenDocblockType
+     * @psalm-suppress RedundantCondition
+     * @param InMemoryFeature[] $config
      */
     private function assertConfig(array $config): void
     {
@@ -48,16 +48,20 @@ final class InMemoryConfig
             Assert::string($toggleConfig['id']);
             Assert::keyExists($toggleConfig, 'enabled');
             Assert::boolean($toggleConfig['enabled']);
-            Assert::nullOrIsArray($toggleConfig['strategies']);
-            /** @var array<string, string|null|array<string, mixed>> $strategy */
-            foreach ($toggleConfig['strategies'] ?? [] as $strategy) {
+
+
+            if (false === array_key_exists('strategies', $toggleConfig)) {
+                continue;
+            }
+
+            Assert::IsArray($toggleConfig['strategies']);
+            foreach ($toggleConfig['strategies'] as $strategy) {
                 Assert::keyExists($strategy, 'strategy_id');
                 Assert::string($strategy['strategy_id']);
                 Assert::keyExists($strategy, 'strategy_type');
                 Assert::string($strategy['strategy_type']);
-                Assert::nullOrIsArray($strategy['segments']);
-                /** @var array<string, string|mixed> $segment */
-                foreach ($strategy['segments'] ?? [] as $segment) {
+                Assert::IsArray($strategy['segments']);
+                foreach ($strategy['segments'] as $segment) {
                     Assert::keyExists($segment, 'segment_id');
                     Assert::string($segment['segment_id']);
                     Assert::keyExists($segment, 'segment_type');
@@ -67,9 +71,7 @@ final class InMemoryConfig
         }
     }
 
-    /**
-     * @return array<string, string|bool|array<string, string|mixed>>
-     */
+    /** @return array<string, InMemoryFeature> */
     public function all(): array
     {
         return $this->config;

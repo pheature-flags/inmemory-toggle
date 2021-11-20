@@ -20,6 +20,11 @@ final class InMemoryConfigTest extends TestCase
 
     public function getInvalidConfig(): Generator
     {
+        yield 'Null feature' => [
+            [
+                null
+            ]
+        ];
         yield 'Empty feature id' => [
             [
                 []
@@ -44,6 +49,18 @@ final class InMemoryConfigTest extends TestCase
             [
                 [
                     'id' => 'some_feature',
+                    'enabled' => 'true?',
+                ]
+            ]
+        ];
+        yield 'Invalid feature status in second position' => [
+            [
+                [
+                    'id' => 'some_feature',
+                    'enabled' => true,
+                ],
+                [
+                    'id' => 'some_feature_1',
                     'enabled' => 'true?',
                 ]
             ]
