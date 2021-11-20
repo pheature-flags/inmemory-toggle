@@ -9,6 +9,9 @@ use Pheature\Core\Toggle\Read\Feature as IFeature;
 use Pheature\Core\Toggle\Read\ToggleStrategies;
 use Pheature\Model\Toggle\Feature;
 
+/**
+ * @psalm-import-type InMemoryFeature from InMemoryConfig
+ */
 final class InMemoryFeatureFactory
 {
     private ChainToggleStrategyFactory $toggleStrategyFactory;
@@ -19,24 +22,17 @@ final class InMemoryFeatureFactory
     }
 
     /**
-     * @param array<string, string|bool|array<string, mixed>> $data
-     * @return IFeature
+     * @param InMemoryFeature $data
      */
     public function create(array $data): IFeature
     {
-        /** @var string $id */
-        $id = $data['id'];
-        $enabled = (bool)$data['enabled'];
-        /** @var array<string, array<string, mixed>> $strategies */
-        $strategies = $data['strategies'] ?? [];
         return new Feature(
-            $id,
-            /** @param array<string, array<string, mixed>> $strategies */
+            $data['id'],
             new ToggleStrategies(...array_map(
                 fn(array $strategy) => $this->toggleStrategyFactory->createFromArray($strategy),
-                $strategies
+                $data['strategies'] ?? []
             )),
-            $enabled
+            $data['enabled']
         );
     }
 }

@@ -10,6 +10,9 @@ use Pheature\Core\Toggle\Read\FeatureFinder;
 use function array_map;
 use function array_values;
 
+/**
+ * @psalm-import-type InMemoryFeature from InMemoryConfig
+ */
 final class InMemoryFeatureFinder implements FeatureFinder
 {
     private InMemoryConfig $config;
@@ -37,7 +40,7 @@ final class InMemoryFeatureFinder implements FeatureFinder
     {
         /** @var callable $configCallback */
         $configCallback = function (array $feature): Feature {
-            /** @var array<string, string|bool|array<string, mixed>> $feature */
+            /** @var InMemoryFeature $feature */
             return $this->featureFactory->create($feature);
         };
 

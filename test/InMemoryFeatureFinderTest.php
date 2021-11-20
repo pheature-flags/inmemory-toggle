@@ -34,7 +34,12 @@ final class InMemoryFeatureFinderTest extends TestCase
                     ],
                 ],
             ]
-        ]
+        ],
+        [
+            'id' => 'some_other_feature',
+            'enabled' => false,
+            'strategies' => []
+        ],
     ];
     private ChainToggleStrategyFactory $chainToggleStrategyFactory;
     private InMemoryConfig $config;
@@ -76,8 +81,8 @@ final class InMemoryFeatureFinderTest extends TestCase
         $featureFactory = new InMemoryFeatureFactory($this->chainToggleStrategyFactory);
 
         $finder = new InMemoryFeatureFinder($this->config, $featureFactory);
-        $features =$finder->all();
-        self::assertCount(1, $features);
+        $features = $finder->all();
+        self::assertCount(2, $features);
         self::assertSame(0, array_key_first($features));
     }
 
