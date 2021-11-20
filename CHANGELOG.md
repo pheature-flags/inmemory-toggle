@@ -1,6 +1,18 @@
 # Changelog
 
-## [0.2.2](https://github.com/pheature-flags/inmemory-toggle/tree/HEAD) (2021-11-18)
+## [0.3.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.3.0) (2021-11-20)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.2...0.3.0)
+
+**Implemented enhancements:**
+
+- \[inmemory-toggle\] Add PHP 8.1 support [\#8](https://github.com/pheature-flags/inmemory-toggle/issues/8)
+
+**Merged pull requests:**
+
+- \[\#8\] Little refactor with psalm types [\#14](https://github.com/pheature-flags/inmemory-toggle/pull/14) (@kpicaza)
+
+## [0.2.2](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.2) (2021-11-18)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.1...0.2.2)
 
@@ -29,10 +41,6 @@
 
 - Update `InMemoryFeatureRepository::remove` contract with a `Feature` instead of `FeatureId` [\#4](https://github.com/pheature-flags/inmemory-toggle/issues/4)
 - \[\#6\] return numeric keyed array from feature finder [\#7](https://github.com/pheature-flags/inmemory-toggle/pull/7) (@kpicaza)
-
-**Fixed bugs:**
-
-- Return array with numerical keys at InmemoryFeatureFinder::all method [\#6](https://github.com/pheature-flags/inmemory-toggle/issues/6)
 
 ## [0.2.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.2.0) (2021-10-08)
 
