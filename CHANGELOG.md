@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.4.0)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.3.0...0.4.0)
+
+**Implemented enhancements:**
+
+- \[inmemory-toggle\] Update issue template for bugs using new issue form in a YAML file [\#3](https://github.com/pheature-flags/inmemory-toggle/issues/3)
+
+**Merged pull requests:**
+
+- allow executing some composer plugins in dev mode [\#18](https://github.com/pheature-flags/inmemory-toggle/pull/18) (@kpicaza)
+- \[\#3\] Update Bug Report Template [\#15](https://github.com/pheature-flags/inmemory-toggle/pull/15) (@pcs289)
+
 ## [0.3.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.3.0) (2021-11-20)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.2.2...0.3.0)
