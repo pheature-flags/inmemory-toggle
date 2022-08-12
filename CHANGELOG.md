@@ -1,6 +1,14 @@
 # Changelog
 
-## [0.4.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.4.0)
+## [0.5.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.5.0)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.4.0...0.5.0)
+
+**Merged pull requests:**
+
+- bump interdependencies to ^0.5 [\#21](https://github.com/pheature-flags/inmemory-toggle/pull/21) (@kpicaza)
+
+## [0.4.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.4.0) (2022-07-25)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.3.0...0.4.0)
 
