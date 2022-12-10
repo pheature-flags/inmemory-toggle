@@ -1,6 +1,15 @@
 # Changelog
 
-## [0.5.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.5.0)
+## [0.7.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.7.0)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.5.0...0.7.0)
+
+**Merged pull requests:**
+
+- \[\#359\] Add PHP 8.2 support [\#25](https://github.com/pheature-flags/inmemory-toggle/pull/25) (@kpicaza)
+- Update dev dependencies [\#22](https://github.com/pheature-flags/inmemory-toggle/pull/22) (@kpicaza)
+
+## [0.5.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.5.0) (2022-08-12)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.4.0...0.5.0)
 
