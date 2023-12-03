@@ -1,6 +1,15 @@
 # Changelog
 
-## [0.7.1](https://github.com/pheature-flags/inmemory-toggle/tree/0.7.1)
+## [0.8.0](https://github.com/pheature-flags/inmemory-toggle/tree/0.8.0)
+
+[Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.7.1...0.8.0)
+
+**Merged pull requests:**
+
+- update psalm to 5.16 [\#30](https://github.com/pheature-flags/inmemory-toggle/pull/30) (@kpicaza)
+- update php versions support [\#29](https://github.com/pheature-flags/inmemory-toggle/pull/29) (@kpicaza)
+
+## [0.7.1](https://github.com/pheature-flags/inmemory-toggle/tree/0.7.1) (2022-12-12)
 
 [Full Changelog](https://github.com/pheature-flags/inmemory-toggle/compare/0.7.0...0.7.1)
 
